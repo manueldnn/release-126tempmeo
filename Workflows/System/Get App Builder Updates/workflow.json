@@ -1,0 +1,2662 @@
+{
+  "InputFields": [],
+  "OutputFields": [],
+  "Id": 1,
+  "GlobalId": "ef26cf67-5294-48b9-b1f3-66b050ee77aa",
+  "ConfigGenerationGlobalId": "ef26cf67-5294-48b9-b1f3-66b050ee77aa",
+  "EnvironmentId": 1,
+  "Name": "Get App Builder Updates",
+  "Description": "System Workflow to Check for PAA Updates",
+  "IsDebug": false,
+  "IsSystem": true,
+  "ActionList": {
+    "Id": 1,
+    "EventName": "Event",
+    "Actions": [
+      {
+        "Id": 1,
+        "Description": "Untitled Action",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "LoadUser",
+        "OrderIndex": 0,
+        "ActionParameters": [
+          {
+            "Id": 1,
+            "Name": "Id",
+            "Value": "1",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 1,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 2,
+            "Name": "Portal",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 1,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_0cg5cm7"
+      },
+      {
+        "Id": 2,
+        "Description": "Check if app is marked as Development",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "PostData",
+        "OrderIndex": 1,
+        "ActionParameters": [
+          {
+            "Id": 3,
+            "Name": "URL",
+            "Value": "https://services.plantanapp.com/api/AppDevCheck?URL=[URL:Domain]",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 4,
+            "Name": "UrlTokenContext",
+            "Value": "Url",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 5,
+            "Name": "UseSSL",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 6,
+            "Name": "Timeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 7,
+            "Name": "HttpMethod",
+            "Value": "GET",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 8,
+            "Name": "Data",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 9,
+            "Name": "DoNotEscapeTokens",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 10,
+            "Name": "DisableReferer",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 11,
+            "Name": "UseDNNProxySettings",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 12,
+            "Name": "AddCurrentCookies",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 13,
+            "Name": "OnError",
+            "Value": {
+              "Id": 2,
+              "EventName": "error",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 14,
+            "Name": "CookieContainerToken",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 15,
+            "Name": "IgnoreErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 16,
+            "Name": "Headers",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 17,
+            "Name": "OutputTokenName",
+            "Value": "CheckApp",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 18,
+            "Name": "OutputHeaders",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 2,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_1msp223"
+      },
+      {
+        "Id": 3,
+        "Description": "Clear Updates table before getting new entries",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "RunSql",
+        "OrderIndex": 2,
+        "ActionParameters": [
+          {
+            "Id": 19,
+            "Name": "ConnectionString",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 3,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 20,
+            "Name": "QueryTimeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 3,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 21,
+            "Name": "SqlQuery",
+            "Value": "DELETE FROM dbo.PlantAnApp_Updates",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 3,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 22,
+            "Name": "OnError",
+            "Value": {
+              "Id": 3,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 3,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 23,
+            "Name": "ShowErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 3,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 24,
+            "Name": "DbConnector",
+            "Value": {
+              "Entry": "",
+              "Group": null,
+              "EntireGroup": false,
+              "Type": "Database",
+              "IsExpression": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 3,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 25,
+            "Name": "BindTokens",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 3,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 26,
+            "Name": "OutputTokenName",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 3,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 27,
+            "Name": "ExtractColumns",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 3,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_0xxjjdc"
+      },
+      {
+        "Id": 4,
+        "Description": "Clear Hotfixes table before getting new entries",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "RunSql",
+        "OrderIndex": 3,
+        "ActionParameters": [
+          {
+            "Id": 28,
+            "Name": "ConnectionString",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 4,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 29,
+            "Name": "QueryTimeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 4,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 30,
+            "Name": "SqlQuery",
+            "Value": "DELETE FROM dbo.PlantAnApp_Updates_Hotfixes",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 4,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 31,
+            "Name": "OnError",
+            "Value": {
+              "Id": 4,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 4,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 32,
+            "Name": "ShowErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 4,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 33,
+            "Name": "DbConnector",
+            "Value": {
+              "Entry": "",
+              "Group": null,
+              "EntireGroup": false,
+              "Type": "Database",
+              "IsExpression": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 4,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 34,
+            "Name": "BindTokens",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 4,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 35,
+            "Name": "OutputTokenName",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 4,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 36,
+            "Name": "ExtractColumns",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 4,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_0nk2s98"
+      },
+      {
+        "Id": 5,
+        "Description": "Clear Specific Updates table before getting new entries",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "RunSql",
+        "OrderIndex": 4,
+        "ActionParameters": [
+          {
+            "Id": 37,
+            "Name": "ConnectionString",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 5,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 38,
+            "Name": "QueryTimeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 5,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 39,
+            "Name": "SqlQuery",
+            "Value": "DELETE FROM dbo.PlantAnApp_Updates_SpecificUpdates",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 5,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 40,
+            "Name": "OnError",
+            "Value": {
+              "Id": 5,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 5,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 41,
+            "Name": "ShowErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 5,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 42,
+            "Name": "DbConnector",
+            "Value": {
+              "Entry": "",
+              "Group": null,
+              "EntireGroup": false,
+              "Type": "Database",
+              "IsExpression": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 5,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 43,
+            "Name": "BindTokens",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 5,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 44,
+            "Name": "OutputTokenName",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 5,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 45,
+            "Name": "ExtractColumns",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 5,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_0jrpf59"
+      },
+      {
+        "Id": 6,
+        "Description": "Clear Add-ons table before getting new entries",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "RunSql",
+        "OrderIndex": 5,
+        "ActionParameters": [
+          {
+            "Id": 46,
+            "Name": "ConnectionString",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 6,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 47,
+            "Name": "QueryTimeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 6,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 48,
+            "Name": "SqlQuery",
+            "Value": "DELETE FROM dbo.PlantAnApp_Updates_Addons",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 6,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 49,
+            "Name": "OnError",
+            "Value": {
+              "Id": 6,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 6,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 50,
+            "Name": "ShowErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 6,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 51,
+            "Name": "DbConnector",
+            "Value": {
+              "Entry": "",
+              "Group": null,
+              "EntireGroup": false,
+              "Type": "Database",
+              "IsExpression": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 6,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 52,
+            "Name": "BindTokens",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 6,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 53,
+            "Name": "OutputTokenName",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 6,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 54,
+            "Name": "ExtractColumns",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 6,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_1jzfqri"
+      },
+      {
+        "Id": 7,
+        "Description": "Get Updates",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "PostData",
+        "OrderIndex": 6,
+        "ActionParameters": [
+          {
+            "Id": 55,
+            "Name": "URL",
+            "Value": "https://services.plantanapp.com/api/GetAppUpdates",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 56,
+            "Name": "UrlTokenContext",
+            "Value": "Url",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 57,
+            "Name": "UseSSL",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 58,
+            "Name": "Timeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 59,
+            "Name": "HttpMethod",
+            "Value": "GET",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 60,
+            "Name": "Data",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 61,
+            "Name": "DoNotEscapeTokens",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 62,
+            "Name": "DisableReferer",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 63,
+            "Name": "UseDNNProxySettings",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 64,
+            "Name": "AddCurrentCookies",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 65,
+            "Name": "OnError",
+            "Value": {
+              "Id": 7,
+              "EventName": "error",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 66,
+            "Name": "CookieContainerToken",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 67,
+            "Name": "IgnoreErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 68,
+            "Name": "Headers",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 69,
+            "Name": "OutputTokenName",
+            "Value": "UpdatesJSON",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 70,
+            "Name": "OutputHeaders",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 7,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_1phbn0d"
+      },
+      {
+        "Id": 8,
+        "Description": "Updates",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "LoadEntitiesFromJson",
+        "OrderIndex": 7,
+        "ActionParameters": [
+          {
+            "Id": 71,
+            "Name": "JsonModel",
+            "Value": "[UpdatesJSON]",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 8,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 72,
+            "Name": "EntityName",
+            "Value": "UpdatesData",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 8,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 73,
+            "Name": "OnError",
+            "Value": {
+              "Id": 8,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 8,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 74,
+            "Name": "EnforceISODateTime",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 8,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_1jst63f"
+      },
+      {
+        "Id": 9,
+        "Description": "Insert new Updates",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "ExecuteActionsOnEntityList",
+        "OrderIndex": 8,
+        "ActionParameters": [
+          {
+            "Id": 75,
+            "Name": "ContextBehavior",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 9,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 85,
+            "Name": "ActionList",
+            "Value": {
+              "Id": 9,
+              "EventName": "click",
+              "Actions": [
+                {
+                  "Id": 10,
+                  "Description": "Insert new Update",
+                  "ActionErrorMessage": null,
+                  "Condition": null,
+                  "ActionType": "RunSql",
+                  "OrderIndex": 0,
+                  "ActionParameters": [
+                    {
+                      "Id": 76,
+                      "Name": "ConnectionString",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 10,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 77,
+                      "Name": "QueryTimeout",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 10,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 78,
+                      "Name": "SqlQuery",
+                      "Value": "INSERT INTO dbo.PlantAnApp_Updates (Title, DnnFriendlyName, Version, CreatedDate)\nVALUES (@Title, @DnnFriendlyName, @Version, GetDate())",
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 10,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 79,
+                      "Name": "OnError",
+                      "Value": {
+                        "Id": 10,
+                        "EventName": "OnError",
+                        "Actions": [],
+                        "IsInvalid": false
+                      },
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 10,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 80,
+                      "Name": "ShowErrors",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 10,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 81,
+                      "Name": "DbConnector",
+                      "Value": {
+                        "Entry": "",
+                        "Group": null,
+                        "EntireGroup": false,
+                        "Type": "Database",
+                        "IsExpression": false
+                      },
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 10,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 82,
+                      "Name": "BindTokens",
+                      "Value": [
+                        {
+                          "name": "Title",
+                          "value": "[UpdatesData:Title]"
+                        },
+                        {
+                          "name": "DnnFriendlyName",
+                          "value": "[UpdatesData:DnnFriendlyName]"
+                        },
+                        {
+                          "name": "Version",
+                          "value": "[UpdatesData:Version]"
+                        }
+                      ],
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 10,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 83,
+                      "Name": "OutputTokenName",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 10,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 84,
+                      "Name": "ExtractColumns",
+                      "Value": [],
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 10,
+                      "OrderIndex": 0
+                    }
+                  ],
+                  "DiagramUID": null
+                }
+              ],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 9,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 86,
+            "Name": "ContinueOnError",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 9,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 87,
+            "Name": "OnError",
+            "Value": {
+              "Id": 11,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 9,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 88,
+            "Name": "Filters",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 9,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 89,
+            "Name": "EntityName",
+            "Value": "UpdatesData",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 9,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_0r9njb6"
+      },
+      {
+        "Id": 11,
+        "Description": "Get Hotfixes <Stable>",
+        "ActionErrorMessage": null,
+        "Condition": "[CheckApp] == False",
+        "ActionType": "PostData",
+        "OrderIndex": 9,
+        "ActionParameters": [
+          {
+            "Id": 90,
+            "Name": "URL",
+            "Value": "https://services.plantanapp.com/api/GetNewHotfixes?ReleaseVersion=[PAASysUpdates:ReleaseVersion]",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 91,
+            "Name": "UrlTokenContext",
+            "Value": "Url",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 92,
+            "Name": "UseSSL",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 93,
+            "Name": "Timeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 94,
+            "Name": "HttpMethod",
+            "Value": "GET",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 95,
+            "Name": "Data",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 96,
+            "Name": "DoNotEscapeTokens",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 97,
+            "Name": "DisableReferer",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 98,
+            "Name": "UseDNNProxySettings",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 99,
+            "Name": "AddCurrentCookies",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 100,
+            "Name": "OnError",
+            "Value": {
+              "Id": 12,
+              "EventName": "error",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 101,
+            "Name": "CookieContainerToken",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 102,
+            "Name": "IgnoreErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 103,
+            "Name": "Headers",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 104,
+            "Name": "OutputTokenName",
+            "Value": "HotfixesJSON",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 105,
+            "Name": "OutputHeaders",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 11,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_163kf6c"
+      },
+      {
+        "Id": 12,
+        "Description": "Get Hotfixes <Dev>",
+        "ActionErrorMessage": null,
+        "Condition": "[CheckApp] == True",
+        "ActionType": "PostData",
+        "OrderIndex": 10,
+        "ActionParameters": [
+          {
+            "Id": 106,
+            "Name": "URL",
+            "Value": "https://services.plantanapp.com/api/GetNewDevHotfixes?ReleaseVersion=[PAASysUpdates:ReleaseVersion]",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 107,
+            "Name": "UrlTokenContext",
+            "Value": "Url",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 108,
+            "Name": "UseSSL",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 109,
+            "Name": "Timeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 110,
+            "Name": "HttpMethod",
+            "Value": "GET",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 111,
+            "Name": "Data",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 112,
+            "Name": "DoNotEscapeTokens",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 113,
+            "Name": "DisableReferer",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 114,
+            "Name": "UseDNNProxySettings",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 115,
+            "Name": "AddCurrentCookies",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 116,
+            "Name": "OnError",
+            "Value": {
+              "Id": 13,
+              "EventName": "error",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 117,
+            "Name": "CookieContainerToken",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 118,
+            "Name": "IgnoreErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 119,
+            "Name": "Headers",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 120,
+            "Name": "OutputTokenName",
+            "Value": "HotfixesJSON",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 121,
+            "Name": "OutputHeaders",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 12,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_1ahuvsh"
+      },
+      {
+        "Id": 13,
+        "Description": "Hotfixes",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "LoadEntitiesFromJson",
+        "OrderIndex": 11,
+        "ActionParameters": [
+          {
+            "Id": 122,
+            "Name": "JsonModel",
+            "Value": "[HotfixesJSON]",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 13,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 123,
+            "Name": "EntityName",
+            "Value": "HotfixesData",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 13,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 124,
+            "Name": "OnError",
+            "Value": {
+              "Id": 14,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 13,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 125,
+            "Name": "EnforceISODateTime",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 13,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_1njzr7i"
+      },
+      {
+        "Id": 14,
+        "Description": "Insert new Hotfixes",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "ExecuteActionsOnEntityList",
+        "OrderIndex": 12,
+        "ActionParameters": [
+          {
+            "Id": 126,
+            "Name": "ContextBehavior",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 14,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 139,
+            "Name": "ActionList",
+            "Value": {
+              "Id": 15,
+              "EventName": "click",
+              "Actions": [
+                {
+                  "Id": 15,
+                  "Description": null,
+                  "ActionErrorMessage": null,
+                  "Condition": null,
+                  "ActionType": "ApplyTokens",
+                  "OrderIndex": 0,
+                  "ActionParameters": [
+                    {
+                      "Id": 127,
+                      "Name": "Tokens",
+                      "Value": [
+                        {
+                          "value": "[If:Equals(a=[PAASysUpdates:VersionCompare(LeftValue=\"00.00.00\",RightValue=\"[PAASysUpdates:VersionConvert(Version=\"[PAASysUpdates:ActualModuleVersion(FriendlyName=\"[HotfixesData:DnnFriendlyName]\")]\")=[PAASysUpdates:ActualModuleVersion(FriendlyName=\"[HotfixesData:DnnFriendlyName]\")]]\")], b=-1)]",
+                          "name": "VersionIsNotZero"
+                        },
+                        {
+                          "value": "[If:Equals(a=[PAASysUpdates:VersionCompare(LeftValue=\"[HotfixesData:Version]\",RightValue=\"[PAASysUpdates:VersionConvert(Version=\"[PAASysUpdates:ActualModuleVersion(FriendlyName=\"[HotfixesData:DnnFriendlyName]\")]\")=[PAASysUpdates:ActualModuleVersion(FriendlyName=\"[HotfixesData:DnnFriendlyName]\")]]\")],b=1)]",
+                          "name": "VersionCanBeInstalled"
+                        }
+                      ],
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 15,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 128,
+                      "Name": "TokenizeTokenNames",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 15,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 129,
+                      "Name": "RecursionCount",
+                      "Value": "1",
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 15,
+                      "OrderIndex": 0
+                    }
+                  ],
+                  "DiagramUID": null
+                },
+                {
+                  "Id": 16,
+                  "Description": "Insert new Hotfix",
+                  "ActionErrorMessage": null,
+                  "Condition": "[VersionIsNotZero] && [VersionCanBeInstalled]",
+                  "ActionType": "RunSql",
+                  "OrderIndex": 1,
+                  "ActionParameters": [
+                    {
+                      "Id": 130,
+                      "Name": "ConnectionString",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 16,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 131,
+                      "Name": "QueryTimeout",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 16,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 132,
+                      "Name": "SqlQuery",
+                      "Value": "INSERT INTO dbo.PlantAnApp_Updates_Hotfixes (FeatureType, ChangeType, Date, Version, DnnFriendlyName, Details, InstalledVersion, ProductID, Link, State, CreatedDate, Priority)\nVALUES (@FeatureType, @ChangeType, @Date, @Version, @DnnFriendlyName, @Details, @InstalledVersion, @ProductID, @Link, @State, GetDate(), @Priority)",
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 16,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 133,
+                      "Name": "OnError",
+                      "Value": {
+                        "Id": 16,
+                        "EventName": "OnError",
+                        "Actions": [],
+                        "IsInvalid": false
+                      },
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 16,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 134,
+                      "Name": "ShowErrors",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 16,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 135,
+                      "Name": "DbConnector",
+                      "Value": {
+                        "Entry": "",
+                        "Group": null,
+                        "EntireGroup": false,
+                        "Type": "Database",
+                        "IsExpression": false
+                      },
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 16,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 136,
+                      "Name": "BindTokens",
+                      "Value": [
+                        {
+                          "name": "FeatureType",
+                          "value": "[HotfixesData:FeatureType]"
+                        },
+                        {
+                          "name": "ChangeType",
+                          "value": "[HotfixesData:ChangeType]"
+                        },
+                        {
+                          "name": "Date",
+                          "value": "[HotfixesData:Date]"
+                        },
+                        {
+                          "name": "Version",
+                          "value": "[HotfixesData:Version]"
+                        },
+                        {
+                          "name": "DnnFriendlyName",
+                          "value": "[HotfixesData:DnnFriendlyName]"
+                        },
+                        {
+                          "name": "Details",
+                          "value": "[HotfixesData:Details]"
+                        },
+                        {
+                          "name": "InstalledVersion",
+                          "value": "[PAASysUpdates:VersionConvert(Version=\"[PAASysUpdates:ActualModuleVersion(FriendlyName=\"[HotfixesData:DnnFriendlyName]\")]\")=[PAASysUpdates:ActualModuleVersion(FriendlyName=\"[HotfixesData:DnnFriendlyName]\")]]"
+                        },
+                        {
+                          "name": "ProductID",
+                          "value": "[HotfixesData:Product]"
+                        },
+                        {
+                          "name": "Link",
+                          "value": "[HotfixesData:Link]"
+                        },
+                        {
+                          "name": "State",
+                          "value": "[HotfixesData:State=\"\"]"
+                        },
+                        {
+                          "name": "Priority",
+                          "value": "[HotfixesData:Priority]"
+                        }
+                      ],
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 16,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 137,
+                      "Name": "OutputTokenName",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 16,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 138,
+                      "Name": "ExtractColumns",
+                      "Value": [],
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 16,
+                      "OrderIndex": 0
+                    }
+                  ],
+                  "DiagramUID": null
+                }
+              ],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 14,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 140,
+            "Name": "ContinueOnError",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 14,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 141,
+            "Name": "OnError",
+            "Value": {
+              "Id": 17,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 14,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 142,
+            "Name": "Filters",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 14,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 143,
+            "Name": "EntityName",
+            "Value": "HotfixesData",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 14,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_1fjkjud"
+      },
+      {
+        "Id": 17,
+        "Description": "Get Specific Updates <Stable>",
+        "ActionErrorMessage": null,
+        "Condition": "[CheckApp] == False",
+        "ActionType": "PostData",
+        "OrderIndex": 13,
+        "ActionParameters": [
+          {
+            "Id": 144,
+            "Name": "URL",
+            "Value": "https://services.plantanapp.com/api/GetNewHotfixSpecificBuilds?ReleaseVersion=[PAASysUpdates:ReleaseVersion]",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 145,
+            "Name": "UrlTokenContext",
+            "Value": "Url",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 146,
+            "Name": "UseSSL",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 147,
+            "Name": "Timeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 148,
+            "Name": "HttpMethod",
+            "Value": "GET",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 149,
+            "Name": "Data",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 150,
+            "Name": "DoNotEscapeTokens",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 151,
+            "Name": "DisableReferer",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 152,
+            "Name": "UseDNNProxySettings",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 153,
+            "Name": "AddCurrentCookies",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 154,
+            "Name": "OnError",
+            "Value": {
+              "Id": 18,
+              "EventName": "error",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 155,
+            "Name": "CookieContainerToken",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 156,
+            "Name": "IgnoreErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 157,
+            "Name": "Headers",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 158,
+            "Name": "OutputTokenName",
+            "Value": "SpecificUpdatesJSON",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 159,
+            "Name": "OutputHeaders",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 17,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_0hd3nyd"
+      },
+      {
+        "Id": 18,
+        "Description": "Get Specific Updates <Dev>",
+        "ActionErrorMessage": null,
+        "Condition": "[CheckApp] == True",
+        "ActionType": "PostData",
+        "OrderIndex": 14,
+        "ActionParameters": [
+          {
+            "Id": 160,
+            "Name": "URL",
+            "Value": "https://services.plantanapp.com/api/GetNewDevHotfixSpecificBuilds?ReleaseVersion=[PAASysUpdates:ReleaseVersion]",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 161,
+            "Name": "UrlTokenContext",
+            "Value": "Url",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 162,
+            "Name": "UseSSL",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 163,
+            "Name": "Timeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 164,
+            "Name": "HttpMethod",
+            "Value": "GET",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 165,
+            "Name": "Data",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 166,
+            "Name": "DoNotEscapeTokens",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 167,
+            "Name": "DisableReferer",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 168,
+            "Name": "UseDNNProxySettings",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 169,
+            "Name": "AddCurrentCookies",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 170,
+            "Name": "OnError",
+            "Value": {
+              "Id": 19,
+              "EventName": "error",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 171,
+            "Name": "CookieContainerToken",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 172,
+            "Name": "IgnoreErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 173,
+            "Name": "Headers",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 174,
+            "Name": "OutputTokenName",
+            "Value": "SpecificUpdatesJSON",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 175,
+            "Name": "OutputHeaders",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 18,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_1xacsxa"
+      },
+      {
+        "Id": 19,
+        "Description": "Specific Updates",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "LoadEntitiesFromJson",
+        "OrderIndex": 15,
+        "ActionParameters": [
+          {
+            "Id": 176,
+            "Name": "JsonModel",
+            "Value": "[SpecificUpdatesJSON]",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 19,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 177,
+            "Name": "EntityName",
+            "Value": "SpecificUpdatesData",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 19,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 178,
+            "Name": "OnError",
+            "Value": {
+              "Id": 20,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 19,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 179,
+            "Name": "EnforceISODateTime",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 19,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_08cl8vi"
+      },
+      {
+        "Id": 20,
+        "Description": "Insert new Specific Updates",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "ExecuteActionsOnEntityList",
+        "OrderIndex": 16,
+        "ActionParameters": [
+          {
+            "Id": 180,
+            "Name": "ContextBehavior",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 20,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 190,
+            "Name": "ActionList",
+            "Value": {
+              "Id": 21,
+              "EventName": "click",
+              "Actions": [
+                {
+                  "Id": 21,
+                  "Description": "Insert new Specific Update",
+                  "ActionErrorMessage": null,
+                  "Condition": null,
+                  "ActionType": "RunSql",
+                  "OrderIndex": 0,
+                  "ActionParameters": [
+                    {
+                      "Id": 181,
+                      "Name": "ConnectionString",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 21,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 182,
+                      "Name": "QueryTimeout",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 21,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 183,
+                      "Name": "SqlQuery",
+                      "Value": "INSERT INTO dbo.PlantAnApp_Updates_SpecificUpdates (Product, Version, Info, Link, State, CreatedDate, Priority)\nVALUES (@Product, @Version, @Info, @Link, @State, GetDate(), @Priority)",
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 21,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 184,
+                      "Name": "OnError",
+                      "Value": {
+                        "Id": 22,
+                        "EventName": "OnError",
+                        "Actions": [],
+                        "IsInvalid": false
+                      },
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 21,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 185,
+                      "Name": "ShowErrors",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 21,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 186,
+                      "Name": "DbConnector",
+                      "Value": {
+                        "Entry": "",
+                        "Group": null,
+                        "EntireGroup": false,
+                        "Type": "Database",
+                        "IsExpression": false
+                      },
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 21,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 187,
+                      "Name": "BindTokens",
+                      "Value": [
+                        {
+                          "name": "Product",
+                          "value": "[SpecificUpdatesData:Product]"
+                        },
+                        {
+                          "name": "Version",
+                          "value": "[SpecificUpdatesData:Version]"
+                        },
+                        {
+                          "name": "Info",
+                          "value": "[SpecificUpdatesData:Info]"
+                        },
+                        {
+                          "name": "Link",
+                          "value": "[SpecificUpdatesData:Link]"
+                        },
+                        {
+                          "name": "State",
+                          "value": "[SpecificUpdatesData:State=\"\"]"
+                        },
+                        {
+                          "name": "Priority",
+                          "value": "[SpecificUpdatesData:Priority]"
+                        }
+                      ],
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 21,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 188,
+                      "Name": "OutputTokenName",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 21,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 189,
+                      "Name": "ExtractColumns",
+                      "Value": [],
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 21,
+                      "OrderIndex": 0
+                    }
+                  ],
+                  "DiagramUID": null
+                }
+              ],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 20,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 191,
+            "Name": "ContinueOnError",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 20,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 192,
+            "Name": "OnError",
+            "Value": {
+              "Id": 23,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 20,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 193,
+            "Name": "Filters",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 20,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 194,
+            "Name": "EntityName",
+            "Value": "SpecificUpdatesData",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 20,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_0p2jtn0"
+      },
+      {
+        "Id": 22,
+        "Description": "Get Add-ons",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "PostData",
+        "OrderIndex": 17,
+        "ActionParameters": [
+          {
+            "Id": 195,
+            "Name": "URL",
+            "Value": "https://services.plantanapp.com/api/GetNewAddons?ReleaseVersion=[PAASysUpdates:ReleaseVersion]",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 196,
+            "Name": "UrlTokenContext",
+            "Value": "Url",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 197,
+            "Name": "UseSSL",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 198,
+            "Name": "Timeout",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 199,
+            "Name": "HttpMethod",
+            "Value": "GET",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 200,
+            "Name": "Data",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 201,
+            "Name": "DoNotEscapeTokens",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 202,
+            "Name": "DisableReferer",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 203,
+            "Name": "UseDNNProxySettings",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 204,
+            "Name": "AddCurrentCookies",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 205,
+            "Name": "OnError",
+            "Value": {
+              "Id": 24,
+              "EventName": "error",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 206,
+            "Name": "CookieContainerToken",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 207,
+            "Name": "IgnoreErrors",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 208,
+            "Name": "Headers",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 209,
+            "Name": "OutputTokenName",
+            "Value": "AddonsJSON",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 210,
+            "Name": "OutputHeaders",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 22,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_1giz0v3"
+      },
+      {
+        "Id": 23,
+        "Description": "Add-ons",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "LoadEntitiesFromJson",
+        "OrderIndex": 18,
+        "ActionParameters": [
+          {
+            "Id": 211,
+            "Name": "JsonModel",
+            "Value": "[AddonsJSON]",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 23,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 212,
+            "Name": "EntityName",
+            "Value": "AddonsData",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 23,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 213,
+            "Name": "OnError",
+            "Value": {
+              "Id": 25,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 23,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 214,
+            "Name": "EnforceISODateTime",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 23,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_0qoxlqu"
+      },
+      {
+        "Id": 24,
+        "Description": "Insert new Add-ons",
+        "ActionErrorMessage": null,
+        "Condition": null,
+        "ActionType": "ExecuteActionsOnEntityList",
+        "OrderIndex": 19,
+        "ActionParameters": [
+          {
+            "Id": 215,
+            "Name": "ContextBehavior",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 24,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 225,
+            "Name": "ActionList",
+            "Value": {
+              "Id": 26,
+              "EventName": "click",
+              "Actions": [
+                {
+                  "Id": 25,
+                  "Description": "Insert new Add-on",
+                  "ActionErrorMessage": null,
+                  "Condition": null,
+                  "ActionType": "RunSql",
+                  "OrderIndex": 0,
+                  "ActionParameters": [
+                    {
+                      "Id": 216,
+                      "Name": "ConnectionString",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 25,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 217,
+                      "Name": "QueryTimeout",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 25,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 218,
+                      "Name": "SqlQuery",
+                      "Value": "INSERT INTO dbo.PlantAnApp_Updates_Addons (DnnFriendlyName, Title, Version, Description, Link, CreatedDate)\nVALUES (@DnnFriendlyName, @Title, @Version, @Description, @Link, GetDate())",
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 25,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 219,
+                      "Name": "OnError",
+                      "Value": {
+                        "Id": 27,
+                        "EventName": "OnError",
+                        "Actions": [],
+                        "IsInvalid": false
+                      },
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 25,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 220,
+                      "Name": "ShowErrors",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 25,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 221,
+                      "Name": "DbConnector",
+                      "Value": {
+                        "Entry": "",
+                        "Group": null,
+                        "EntireGroup": false,
+                        "Type": "Database",
+                        "IsExpression": false
+                      },
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 25,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 222,
+                      "Name": "BindTokens",
+                      "Value": [
+                        {
+                          "name": "DnnFriendlyName",
+                          "value": "[AddonsData:DnnFriendlyName]"
+                        },
+                        {
+                          "name": "Title",
+                          "value": "[AddonsData:Title]"
+                        },
+                        {
+                          "name": "Version",
+                          "value": "[AddonsData:Version]"
+                        },
+                        {
+                          "name": "Description",
+                          "value": "[AddonsData:Description]"
+                        },
+                        {
+                          "name": "Link",
+                          "value": "[AddonsData:Link]"
+                        }
+                      ],
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 25,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 223,
+                      "Name": "OutputTokenName",
+                      "Value": null,
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 25,
+                      "OrderIndex": 0
+                    },
+                    {
+                      "Id": 224,
+                      "Name": "ExtractColumns",
+                      "Value": [],
+                      "ParentParameterId": null,
+                      "IsExpression": false,
+                      "ActionId": 25,
+                      "OrderIndex": 0
+                    }
+                  ],
+                  "DiagramUID": null
+                }
+              ],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 24,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 226,
+            "Name": "ContinueOnError",
+            "Value": null,
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 24,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 227,
+            "Name": "OnError",
+            "Value": {
+              "Id": 28,
+              "EventName": "OnError",
+              "Actions": [],
+              "IsInvalid": false
+            },
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 24,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 228,
+            "Name": "Filters",
+            "Value": [],
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 24,
+            "OrderIndex": 0
+          },
+          {
+            "Id": 229,
+            "Name": "EntityName",
+            "Value": "AddonsData",
+            "ParentParameterId": null,
+            "IsExpression": false,
+            "ActionId": 24,
+            "OrderIndex": 0
+          }
+        ],
+        "DiagramUID": "Activity_1srd6uh"
+      }
+    ],
+    "IsInvalid": false
+  },
+  "CreatedBy": -1,
+  "CreatedOn": "2023-09-19T18:58:25.7463798+00:00",
+  "LastModifiedBy": -1,
+  "LastModifiedOn": "2024-04-17T12:06:12.6263704+00:00",
+  "DiagramXML": null,
+  "IsCorrupted": false,
+  "NamespaceUid": "7c267b0c-9d16-4d75-a1b6-11276424627e"
+}
